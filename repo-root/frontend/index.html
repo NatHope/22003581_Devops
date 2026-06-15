@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Hangar Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plane Hangar Management</h1>
+        <p>Aircraft Service and Hangar Service</p>
+    </header>
+
+    <main>
+        <section id="aircraft-section">
+            <h2>Aircraft</h2>
+
+            <table id="aircraft-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tail Number</th>
+                        <th>Model</th>
+                        <th>Manufacturer</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3 id="aircraft-form-title">Add Aircraft</h3>
+            <form id="aircraft-form">
+                <input type="hidden" id="aircraft-id">
+                <label>Tail Number <input type="text" id="aircraft-tailNumber" required></label>
+                <label>Model <input type="text" id="aircraft-model" required></label>
+                <label>Manufacturer <input type="text" id="aircraft-manufacturer"></label>
+                <label>Capacity <input type="number" id="aircraft-capacity" min="0"></label>
+                <label>Status
+                    <select id="aircraft-status">
+                        <option value="AIRWORTHY">AIRWORTHY</option>
+                        <option value="MAINTENANCE">MAINTENANCE</option>
+                        <option value="GROUNDED">GROUNDED</option>
+                    </select>
+                </label>
+                <button type="submit">Save</button>
+                <button type="button" id="aircraft-cancel">Cancel</button>
+            </form>
+        </section>
+
+        <section id="hangar-section">
+            <h2>Hangar Bays</h2>
+
+            <table id="bay-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Bay Number</th>
+                        <th>Location</th>
+                        <th>Capacity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3 id="bay-form-title">Add Hangar Bay</h3>
+            <form id="bay-form">
+                <input type="hidden" id="bay-id">
+                <label>Bay Number <input type="text" id="bay-bayNumber" required></label>
+                <label>Location <input type="text" id="bay-location"></label>
+                <label>Capacity <input type="number" id="bay-capacity" min="0"></label>
+                <button type="submit">Save</button>
+                <button type="button" id="bay-cancel">Cancel</button>
+            </form>
+        </section>
+
+        <section id="booking-section">
+            <h2>Bookings</h2>
+
+            <table id="booking-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Aircraft ID</th>
+                        <th>Bay</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3 id="booking-form-title">Add Booking</h3>
+            <form id="booking-form">
+                <input type="hidden" id="booking-id">
+                <label>Aircraft ID <input type="number" id="booking-aircraftId" min="1" required></label>
+                <label>Bay ID <input type="number" id="booking-bayId" min="1" required></label>
+                <label>Start Date <input type="date" id="booking-startDate" required></label>
+                <label>End Date <input type="date" id="booking-endDate" required></label>
+                <button type="submit">Save</button>
+                <button type="button" id="booking-cancel">Cancel</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p id="status-message"></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hangar-service
+  labels:
+    app: hangar-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hangar-service
+  template:
+    metadata:
+      labels:
+        app: hangar-service
+    spec:
+      containers:
+        - name: hangar-service
+          image: hangar-service:latest
+          ports:
+            - containerPort: 8082
+          env:
+            - name: DB_HOST
+              value: "mysql-service"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "hangar_db"
+            - name: DB_USER
+              value: "hangar_user"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hangar-db-secret
+                  key: password
+            - name: AIRCRAFT_SERVICE_URL
+              value: "http://aircraft-service:8081"

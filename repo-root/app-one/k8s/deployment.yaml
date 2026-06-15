@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aircraft-service
+  labels:
+    app: aircraft-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aircraft-service
+  template:
+    metadata:
+      labels:
+        app: aircraft-service
+    spec:
+      containers:
+        - name: aircraft-service
+          image: aircraft-service:latest
+          ports:
+            - containerPort: 8081
+          env:
+            - name: DB_HOST
+              value: "mysql-service"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "aircraft_db"
+            - name: DB_USER
+              value: "aircraft_user"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: aircraft-db-secret
+                  key: password
