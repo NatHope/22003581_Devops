@@ -12,11 +12,7 @@ import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 
-/*
- * Represents a booking of an aircraft into a hangar bay for a date range.
- * The aircraft itself is owned by the Aircraft Service, so only its ID is
- * stored here. The hangar bay is owned by this service, so it is stored as
- * a full relationship.*/
+
 @Entity
 @Table(name = "booking")
 public class Booking {
