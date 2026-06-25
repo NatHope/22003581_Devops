@@ -16,15 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * REST endpoints for managing aircraft.
- *
+/*REST endpoints for managing aircraft.
  * GET    /aircraft       - list all aircraft
  * GET    /aircraft/{id}  - get a single aircraft
  * POST   /aircraft       - create a new aircraft
  * PUT    /aircraft/{id}  - update an existing aircraft
- * DELETE /aircraft/{id}  - delete an aircraft
- */
+ * DELETE /aircraft/{id}  - delete an aircraft*/
 @RestController
 @RequestMapping("/aircraft")
 @CrossOrigin(origins = "*")
