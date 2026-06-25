@@ -8,8 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
-/*
- * Talks to the Aircraft Service over its REST API*/
+/*Talks to the Aircraft Service over its REST API*/
 @Component
 public class AircraftClient {
 
@@ -22,13 +21,7 @@ public class AircraftClient {
         this.aircraftServiceUrl = aircraftServiceUrl;
     }
 
-    /**
-     * Fetches an aircraft by ID from the Aircraft Service.
-     *
-     * @param aircraftId the ID of the aircraft to look up
-     * @return the aircraft if found, or empty if it does not exist or the
-     *         Aircraft Service is unreachable
-     */
+    
     public Optional<AircraftDto> getAircraft(Long aircraftId) {
         String url = aircraftServiceUrl + "/aircraft/" + aircraftId;
         try {
