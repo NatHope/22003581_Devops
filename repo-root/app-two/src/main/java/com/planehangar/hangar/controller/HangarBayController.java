@@ -16,14 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/*
- * REST endpoints for managing hangar bays.
+/*REST endpoints for managing hangar bays.
  * GET    /bays       - list all hangar bays
  * GET    /bays/{id}  - get a single hangar bay
  * POST   /bays       - create a new hangar bay
  * PUT    /bays/{id}  - update an existing hangar bay
- * DELETE /bays/{id}  - delete a hangar bay
- */
+ * DELETE /bays/{id}  - delete a hangar bay*/
 @RestController
 @RequestMapping("/bays")
 @CrossOrigin(origins = "*")
