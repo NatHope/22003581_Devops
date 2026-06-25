@@ -20,14 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/*
- * rEST endpoints for managing bookings of aircraft into hangar bays.
+/*rEST endpoints for managing bookings of aircraft into hangar bays.
  * GET    /bookings       - list all bookings
  * GET    /bookings/{id}  - get a single booking
  * POST   /bookings       - create a new booking
  * PUT    /bookings/{id}  - update an existing booking
- * DELETE /bookings/{id}  - delete a booking
- */
+ * DELETE /bookings/{id}  - delete a booking*/
 @RestController
 @RequestMapping("/bookings")
 @CrossOrigin(origins = "*")
