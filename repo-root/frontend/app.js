@@ -1,6 +1,6 @@
 
-const AIRCRAFT_API = "http://localhost:8081";
-const HANGAR_API = "http://localhost:8082";
+const AIRCRAFT_API = "http://79.72.64.241:8081";
+const HANGAR_API = "http://79.72.64.241:8082";
 
 const statusMessage = document.getElementById("status-message");
 
