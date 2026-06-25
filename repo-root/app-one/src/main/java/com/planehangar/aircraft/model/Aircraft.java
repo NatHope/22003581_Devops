@@ -7,9 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Represents an aircraft owned or managed by the hangar.
- */
+/*Represents an aircraft owned or managed by the hangar.*/
 @Entity
 @Table(name = "aircraft")
 public class Aircraft {
@@ -28,9 +26,7 @@ public class Aircraft {
 
     private Integer capacity;
 
-    /**
-     * One of AIRWORTHY, MAINTENANCE, GROUNDED.
-     */
+    /*One of AIRWORTHY, MAINTENANCE, GROUNDED*/
     @Column(nullable = false)
     private String status;
 
